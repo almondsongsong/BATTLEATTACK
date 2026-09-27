@@ -1,0 +1,2500 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<title>게임에선 절친인데 현실에선 상극입니다</title>
+
+<style>
+
+*{
+  box-sizing:border-box;
+  min-width:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  width:100%;
+  overflow-x:hidden;
+
+  background:#090d12;
+  color:#edf3f5;
+
+  font-family:
+    "Pretendard",
+    "Noto Sans KR",
+    "Apple SD Gothic Neo",
+    "Malgun Gothic",
+    sans-serif;
+
+  line-height:1.75;
+  word-break:keep-all;
+  overflow-wrap:anywhere;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+img{
+  display:block;
+  max-width:100%;
+}
+
+.container{
+  width:min(920px,92%);
+  margin:0 auto;
+}
+
+.section{
+  padding:76px 0;
+}
+
+.section-dark{
+  background:#0b1015;
+  border-top:1px solid #17252c;
+  border-bottom:1px solid #17252c;
+}
+
+.section-label{
+  margin-bottom:8px;
+
+  color:#5c9eac;
+
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:4px;
+}
+
+.section-title{
+  margin:0;
+
+  color:#eef3f5;
+
+  font-size:clamp(25px,4vw,36px);
+  font-weight:900;
+
+  line-height:1.3;
+  letter-spacing:-1.8px;
+}
+
+.section-sub{
+  margin:10px 0 0;
+
+  color:#75858c;
+
+  font-size:12px;
+  line-height:1.7;
+}
+
+
+/* ==============================
+   HERO
+============================== */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+
+  min-height:90vh;
+  min-height:90svh;
+
+  display:flex;
+  align-items:center;
+
+  padding:
+    max(72px,env(safe-area-inset-top))
+    20px
+    70px;
+
+  background:
+    radial-gradient(
+      circle at 82% 18%,
+      rgba(53,169,191,.17),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 8% 82%,
+      rgba(54,93,160,.10),
+      transparent 28%
+    ),
+    #090d12;
+
+  border-bottom:1px solid #1c2c34;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:
+    linear-gradient(
+      rgba(104,213,233,.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(104,213,233,.025) 1px,
+      transparent 1px
+    );
+
+  background-size:44px 44px;
+}
+
+.hero-inner{
+  position:relative;
+  z-index:2;
+
+  width:min(920px,100%);
+  margin:auto;
+}
+
+.game-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+
+  margin-bottom:52px;
+  padding-bottom:14px;
+
+  border-bottom:1px solid #23333b;
+}
+
+.game-brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.game-dot{
+  width:8px;
+  height:8px;
+
+  background:#69d9b0;
+  border-radius:50%;
+
+  box-shadow:0 0 14px rgba(105,217,176,.65);
+}
+
+.game-name{
+  color:#76d7e8;
+
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:4px;
+}
+
+.server{
+  color:#60747c;
+
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:2px;
+}
+
+.hero-code{
+  margin-bottom:13px;
+
+  color:#54737e;
+
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:4px;
+}
+
+.hero-title{
+  max-width:820px;
+
+  margin:0;
+
+  font-size:clamp(39px,7vw,70px);
+  font-weight:900;
+
+  line-height:1.08;
+  letter-spacing:-4px;
+}
+
+.hero-title .muted{
+  color:#78898f;
+}
+
+.hero-title .point{
+  color:#70d6e8;
+}
+
+.hero-copy{
+  max-width:600px;
+
+  margin-top:27px;
+
+  color:#91a0a6;
+
+  font-size:14px;
+  font-weight:500;
+  line-height:1.9;
+}
+
+.hero-copy strong{
+  color:#e2eaed;
+}
+
+.connect-bar{
+  display:flex;
+  align-items:center;
+
+  width:min(590px,100%);
+
+  margin-top:39px;
+
+  overflow:hidden;
+
+  background:#060a0d;
+
+  border:1px solid #29434e;
+}
+
+.connect-prefix{
+  padding:15px 16px;
+
+  background:#0e171c;
+
+  border-right:1px solid #29434e;
+
+  color:#4e707b;
+
+  font-family:Consolas,"Courier New",monospace;
+}
+
+.connect-command{
+  flex:1;
+
+  padding:15px 16px;
+
+  color:#74deef;
+
+  font-family:Consolas,"Courier New",monospace;
+  font-size:13px;
+  font-weight:900;
+}
+
+.connect-enter{
+  padding:15px 17px;
+
+  background:#10232a;
+
+  color:#64d9ad;
+
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:2px;
+}
+
+
+/* ==============================
+   CORE RELATIONSHIP
+============================== */
+
+.premise-grid{
+  display:grid;
+  grid-template-columns:1fr 54px 1fr;
+
+  align-items:stretch;
+
+  margin-top:35px;
+}
+
+.premise-card{
+  padding:25px 22px;
+
+  background:#0d1419;
+
+  border:1px solid #23333b;
+}
+
+.premise-card.online{
+  background:#0b161b;
+  border-color:#315762;
+}
+
+.premise-type{
+  margin-bottom:8px;
+
+  color:#526a74;
+
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:3px;
+}
+
+.online .premise-type{
+  color:#63cbdc;
+}
+
+.premise-name{
+  margin-bottom:8px;
+
+  color:#e7eef1;
+
+  font-size:18px;
+  font-weight:900;
+}
+
+.online .premise-name{
+  color:#7cdaea;
+}
+
+.premise-text{
+  color:#84949a;
+
+  font-size:12px;
+  line-height:1.75;
+}
+
+.premise-vs{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:#3d5963;
+
+  font-size:9px;
+  font-weight:900;
+}
+
+.story{
+  max-width:740px;
+
+  margin:38px auto 0;
+
+  color:#b3c0c4;
+
+  font-size:14px;
+  line-height:1.95;
+}
+
+.story p{
+  margin:0 0 21px;
+}
+
+.story strong{
+  color:#77d7e7;
+}
+
+.story-highlight{
+  margin:34px 0;
+
+  padding:22px 23px;
+
+  background:#0b151a;
+
+  border-left:3px solid #63cddd;
+
+  color:#dce6e9;
+
+  font-size:15px;
+  font-weight:700;
+  line-height:1.85;
+}
+
+
+/* ==============================
+   CHARACTER
+============================== */
+
+.character-wrap{
+  display:grid;
+
+  grid-template-columns:200px 1fr;
+  gap:32px;
+
+  align-items:start;
+
+  margin-top:36px;
+}
+
+.character-photo{
+  position:relative;
+
+  width:200px;
+
+  overflow:hidden;
+
+  background:#10171c;
+
+  border:1px solid #30444d;
+}
+
+.character-photo img{
+  width:100%;
+  aspect-ratio:3/4;
+  object-fit:cover;
+}
+
+.photo-id{
+  position:absolute;
+
+  left:8px;
+  right:8px;
+  bottom:8px;
+
+  padding:7px;
+
+  background:rgba(5,10,13,.9);
+
+  border:1px solid rgba(101,210,230,.35);
+
+  color:#71d8e9;
+
+  text-align:center;
+
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:2px;
+}
+
+.profile-top{
+  padding-bottom:15px;
+
+  border-bottom:1px solid #26353c;
+}
+
+.profile-name{
+  margin:0;
+
+  font-size:30px;
+  font-weight:900;
+  letter-spacing:-1.5px;
+}
+
+.profile-id{
+  margin-top:4px;
+
+  color:#66cada;
+
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:3px;
+}
+
+.profile-table{
+  margin-top:12px;
+}
+
+.profile-row{
+  display:grid;
+
+  grid-template-columns:68px 1fr;
+
+  gap:12px;
+
+  padding:8px 0;
+
+  border-bottom:1px solid #19272d;
+
+  font-size:12px;
+}
+
+.profile-row b{
+  color:#5f8d98;
+}
+
+.profile-row span{
+  color:#d5dfe2;
+  font-weight:600;
+}
+
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+
+  gap:6px;
+
+  margin-top:16px;
+}
+
+.tag{
+  padding:5px 9px;
+
+  background:#101a20;
+
+  border:1px solid #294049;
+
+  color:#94b1b8;
+
+  font-size:9px;
+}
+
+.character-note{
+  margin-top:18px;
+
+  color:#85959b;
+
+  font-size:12px;
+  line-height:1.8;
+}
+
+
+/* ==============================
+   BATTLE ATTACK
+============================== */
+
+.battle-window{
+  max-width:750px;
+
+  margin:36px auto 0;
+
+  overflow:hidden;
+
+  background:#05090c;
+
+  border:1px solid #29434d;
+}
+
+.battle-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:14px 17px;
+
+  background:#0e181d;
+
+  border-bottom:1px solid #29434d;
+}
+
+.battle-logo{
+  color:#73d9ea;
+
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:3px;
+}
+
+.battle-live{
+  color:#62d9a9;
+
+  font-size:9px;
+  font-weight:900;
+}
+
+.battle-content{
+  padding:22px 20px;
+}
+
+.battle-row{
+  display:grid;
+  grid-template-columns:110px 1fr;
+
+  gap:15px;
+
+  padding:8px 0;
+
+  border-bottom:1px solid #15252b;
+
+  font-family:Consolas,"Courier New",monospace;
+
+  font-size:11px;
+}
+
+.battle-key{
+  color:#526d77;
+}
+
+.battle-value{
+  color:#d9e6e9;
+}
+
+.green{
+  color:#64dcae;
+}
+
+.battle-message{
+  margin-top:20px;
+
+  padding:15px;
+
+  background:#091116;
+
+  border:1px solid #192c34;
+
+  color:#81949b;
+
+  font-size:11px;
+  line-height:1.8;
+}
+
+.battle-message strong{
+  color:#71d6e7;
+}
+
+
+/* ==============================
+   COMMAND CENTER
+============================== */
+
+.command-panel{
+  margin-top:35px;
+
+  overflow:hidden;
+
+  background:#0b1015;
+
+  border:1px solid #2d4550;
+}
+
+.command-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:16px 18px;
+
+  background:#0e171c;
+
+  border-bottom:1px solid #293e47;
+}
+
+.command-header-title{
+  color:#87dceb;
+
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:3px;
+}
+
+.command-header-status{
+  color:#5fd5a6;
+
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:2px;
+}
+
+.command-main{
+  padding:19px;
+}
+
+.command-chips{
+  display:flex;
+  flex-wrap:wrap;
+
+  gap:7px;
+}
+
+.command-chip{
+  padding:7px 10px;
+
+  background:#111a20;
+
+  border:1px solid #29424c;
+  border-radius:6px;
+
+  color:#b6c6cb;
+
+  font-family:Consolas,"Courier New",monospace;
+
+  font-size:9px;
+  font-weight:900;
+}
+
+.command-chip.main{
+  background:#10242b;
+
+  border-color:#4e8b9a;
+
+  color:#76dced;
+}
+
+.command-guide{
+  display:grid;
+  gap:8px;
+
+  margin-top:20px;
+}
+
+.command-item{
+  display:grid;
+
+  grid-template-columns:125px 1fr;
+
+  overflow:hidden;
+
+  background:#0c1318;
+
+  border:1px solid #1f3038;
+}
+
+.command-key{
+  display:flex;
+  align-items:center;
+
+  padding:14px;
+
+  background:#091015;
+
+  border-right:1px solid #1f3038;
+
+  color:#6ed6e8;
+
+  font-family:Consolas,"Courier New",monospace;
+
+  font-size:11px;
+  font-weight:900;
+}
+
+.command-detail{
+  padding:12px 15px;
+}
+
+.command-detail strong{
+  display:block;
+
+  margin-bottom:3px;
+
+  color:#d8e3e6;
+
+  font-size:11px;
+}
+
+.command-detail span{
+  color:#72848b;
+
+  font-size:10px;
+  line-height:1.6;
+}
+
+.connect-guide{
+  margin-top:22px;
+
+  padding:18px;
+
+  background:#070c10;
+
+  border:1px solid #31515c;
+}
+
+.connect-guide-title{
+  margin-bottom:13px;
+
+  color:#71d7e9;
+
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:3px;
+}
+
+.terminal{
+  padding:16px;
+
+  background:#030608;
+
+  border:1px solid #1b3038;
+
+  color:#9eb2b8;
+
+  font-family:Consolas,"Courier New",monospace;
+
+  font-size:10px;
+  line-height:1.9;
+}
+
+.terminal-title{color:#70d8e9;}
+.terminal-green{color:#67dcae;}
+.terminal-yellow{color:#e0c86d;}
+.terminal-red{color:#d77979;}
+
+.connect-explain{
+  margin:13px 0 0;
+
+  color:#74878e;
+
+  font-size:10px;
+  line-height:1.7;
+}
+
+
+/* ==============================
+   PLAY GUIDE
+============================== */
+
+.play-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+
+  gap:9px;
+
+  margin-top:34px;
+}
+
+.play-item{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+
+  padding:17px;
+
+  background:#0c1318;
+
+  border:1px solid #21343c;
+}
+
+.play-icon{
+  flex:0 0 31px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  width:31px;
+  height:31px;
+
+  background:#101d23;
+
+  border:1px solid #29444e;
+
+  font-size:14px;
+}
+
+.play-text strong{
+  display:block;
+
+  margin-bottom:4px;
+
+  color:#dce7ea;
+
+  font-size:11px;
+  font-weight:900;
+}
+
+.play-text span{
+  display:block;
+
+  color:#76888f;
+
+  font-size:10px;
+  line-height:1.65;
+}
+
+.play-text b{
+  color:#6ed6e8;
+}
+
+
+/* ==============================
+   EPISODES
+============================== */
+
+.episodes{
+  max-width:820px;
+
+  margin:36px auto 0;
+
+  border-top:1px solid #263940;
+}
+
+.episode{
+  display:grid;
+  grid-template-columns:62px 1fr;
+
+  gap:16px;
+
+  padding:19px 8px;
+
+  border-bottom:1px solid #203038;
+}
+
+.ep-number{
+  color:#507681;
+
+  font-family:Consolas,"Courier New",monospace;
+
+  font-size:10px;
+  font-weight:900;
+}
+
+.ep-title{
+  color:#e1eaed;
+
+  font-size:13px;
+  font-weight:900;
+}
+
+.ep-desc{
+  margin-top:4px;
+
+  color:#74858c;
+
+  font-size:10px;
+  line-height:1.7;
+}
+
+.episode.featured{
+  background:
+    linear-gradient(
+      90deg,
+      rgba(54,161,182,.07),
+      transparent 70%
+    );
+}
+
+.episode.featured .ep-number,
+.episode.featured .ep-title{
+  color:#71d7e8;
+}
+
+.episode-notice{
+  max-width:820px;
+
+  margin:18px auto 0;
+
+  padding:13px 15px;
+
+  background:#0a1115;
+
+  border-left:2px solid #355d68;
+
+  color:#65777e;
+
+  font-size:9px;
+  line-height:1.7;
+}
+
+
+/* ==============================
+   HIDDEN IDENTITY
+============================== */
+
+.secret-box{
+  max-width:760px;
+
+  margin:35px auto 0;
+
+  padding:26px 24px;
+
+  background:#0b1419;
+
+  border:1px solid #28434d;
+  border-left:3px solid #64cfe1;
+}
+
+.secret-code{
+  margin-bottom:10px;
+
+  color:#4d7c87;
+
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:4px;
+}
+
+.secret-title{
+  color:#e9f0f2;
+
+  font-size:20px;
+  font-weight:900;
+  line-height:1.55;
+}
+
+.secret-title strong{
+  color:#72d7e8;
+}
+
+.secret-text{
+  margin-top:13px;
+
+  color:#82939a;
+
+  font-size:11px;
+  line-height:1.8;
+}
+
+
+/* ==============================
+   PLAY NOW
+============================== */
+
+.platform{
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(45,145,166,.12),
+      transparent 55%
+    ),
+    #080c10;
+}
+
+.platform-head{
+  text-align:center;
+}
+
+.platform-intro{
+  margin:12px auto 32px;
+
+  color:#788a91;
+
+  text-align:center;
+
+  font-size:12px;
+}
+
+.platform-buttons{
+  width:min(560px,100%);
+
+  margin:auto;
+
+  display:grid;
+  gap:10px;
+}
+
+.platform-btn{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  width:100%;
+
+  padding:17px 19px;
+
+  background:#0d1419;
+
+  border:1px solid #29404a;
+  border-radius:9px;
+
+  transition:.2s;
+}
+
+.platform-btn:hover{
+  transform:translateY(-2px);
+
+  background:#111c22;
+}
+
+.platform-left{
+  display:flex;
+  align-items:center;
+  gap:11px;
+
+  color:#dce7ea;
+
+  font-size:12px;
+  font-weight:900;
+}
+
+.platform-arrow{
+  color:#4f7781;
+
+  font-size:12px;
+}
+
+.platform-btn small{
+  display:block;
+
+  margin-top:2px;
+
+  color:#62757c;
+
+  font-size:8px;
+  font-weight:700;
+  letter-spacing:1px;
+}
+
+.univers{border-color:#4b627b;}
+.crack{border-color:#68546f;}
+.tikita{border-color:#376f7b;}
+
+
+/* ==============================
+   FINAL
+============================== */
+
+.final-message{
+  margin-top:60px;
+  padding-top:42px;
+
+  border-top:1px solid #1d3038;
+
+  text-align:center;
+}
+
+.final-status{
+  margin-bottom:17px;
+
+  color:#5ed6a6;
+
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:4px;
+}
+
+.final-title{
+  margin:0;
+
+  color:#edf3f5;
+
+  font-size:clamp(27px,5vw,45px);
+  font-weight:900;
+
+  line-height:1.3;
+  letter-spacing:-2px;
+}
+
+.final-title span{
+  color:#70d7e8;
+}
+
+.final-copy{
+  margin-top:18px;
+
+  color:#7e8e94;
+
+  font-size:11px;
+  line-height:1.9;
+}
+
+.final-command{
+  display:inline-block;
+
+  margin-top:24px;
+  padding:8px 15px;
+
+  border:1px solid #37616c;
+
+  color:#6dd6e8;
+
+  font-family:Consolas,"Courier New",monospace;
+
+  font-size:9px;
+  font-weight:900;
+}
+
+
+/* ==============================
+   COPYRIGHT
+============================== */
+
+.copyright{
+  padding:
+    40px
+    20px
+    calc(40px + env(safe-area-inset-bottom));
+
+  background:#050709;
+
+  border-top:1px solid #17242a;
+
+  text-align:center;
+}
+
+.copyright-title{
+  color:#46727c;
+
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:3px;
+}
+
+.copyright-main{
+  margin-top:9px;
+
+  color:#aebbc0;
+
+  font-size:10px;
+  font-weight:700;
+}
+
+.copyright-text{
+  max-width:620px;
+
+  margin:10px auto 0;
+
+  color:#536269;
+
+  font-size:9px;
+  line-height:1.8;
+}
+
+.copyright-author{
+  margin-top:12px;
+
+  color:#61767e;
+
+  font-size:9px;
+}
+
+.copyright-author strong{
+  color:#8fcbd6;
+}
+
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media(max-width:720px){
+
+  .container{
+    width:100%;
+    padding:0 18px;
+  }
+
+  .section{
+    padding:55px 0;
+  }
+
+  .hero{
+    min-height:82svh;
+
+    padding-left:18px;
+    padding-right:18px;
+  }
+
+  .game-top{
+    margin-bottom:38px;
+  }
+
+  .server{
+    display:none;
+  }
+
+  .hero-title{
+    font-size:clamp(34px,10vw,47px);
+    letter-spacing:-2.5px;
+  }
+
+  .hero-copy{
+    font-size:13px;
+  }
+
+  .connect-enter{
+    display:none;
+  }
+
+  .section-title{
+    font-size:24px;
+  }
+
+  .premise-grid{
+    grid-template-columns:1fr;
+    gap:8px;
+  }
+
+  .premise-vs{
+    height:20px;
+  }
+
+  .story{
+    font-size:13px;
+  }
+
+  .character-wrap{
+    grid-template-columns:135px 1fr;
+    gap:17px;
+  }
+
+  .character-photo{
+    width:135px;
+  }
+
+  .profile-name{
+    font-size:23px;
+  }
+
+  .profile-row{
+    display:block;
+
+    padding:6px 0;
+
+    font-size:10px;
+  }
+
+  .profile-row b{
+    display:block;
+
+    margin-bottom:2px;
+
+    font-size:8px;
+  }
+
+  .profile-row span{
+    display:block;
+  }
+
+  .character-note{
+    font-size:10px;
+  }
+
+  .battle-row{
+    grid-template-columns:78px 1fr;
+  }
+
+  .command-main{
+    padding:14px;
+  }
+
+  .command-item{
+    display:block;
+  }
+
+  .command-key{
+    padding:10px 12px;
+
+    border-right:0;
+    border-bottom:1px solid #1f3038;
+  }
+
+  .command-detail{
+    padding:11px 12px;
+  }
+
+  .play-grid{
+    grid-template-columns:1fr;
+  }
+
+  .episode{
+    grid-template-columns:48px 1fr;
+
+    gap:8px;
+
+    padding:16px 3px;
+  }
+
+  .ep-title{
+    font-size:12px;
+  }
+
+  .ep-desc{
+    font-size:9px;
+  }
+
+  .platform-btn{
+    padding:15px 16px;
+  }
+
+}
+
+
+@media(max-width:400px){
+
+  .container{
+    padding:0 15px;
+  }
+
+  .character-wrap{
+    grid-template-columns:115px 1fr;
+    gap:13px;
+  }
+
+  .character-photo{
+    width:115px;
+  }
+
+  .profile-name{
+    font-size:20px;
+  }
+
+  .tags{
+    display:none;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ==============================
+     HERO
+============================== -->
+
+<header class="hero">
+
+  <div class="hero-inner">
+
+    <div class="game-top">
+
+      <div class="game-brand">
+        <span class="game-dot"></span>
+        <span class="game-name">BATTLE ATTACK</span>
+      </div>
+
+      <div class="server">
+        SERVER 01 · CONNECTED
+      </div>
+
+    </div>
+
+
+    <div class="hero-code">
+      UNKNOWN IDENTITY · BEST DUO
+    </div>
+
+
+    <h1 class="hero-title">
+      <span class="muted">현실에선 상극.</span><br>
+      접속하면 <span class="point">절친.</span>
+    </h1>
+
+
+    <div class="hero-copy">
+      같은 과에서 2년째 부딪히는 <strong>하주연.</strong><br>
+      《배틀어택》에서 1년째 함께한 고정 듀오 <strong>LUNA.</strong><br><br>
+
+      당신은 아직 모른다.<br>
+      두 사람이 같은 사람이라는 것을.
+    </div>
+
+
+    <div class="connect-bar">
+
+      <div class="connect-prefix">&gt;</div>
+
+      <div class="connect-command">
+        !접속
+      </div>
+
+      <div class="connect-enter">
+        ENTER
+      </div>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- ==============================
+     STORY
+============================== -->
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-label">
+      01 · STORY
+    </div>
+
+    <h2 class="section-title">
+      같은 사람을<br>
+      두 번 만나고 있다
+    </h2>
+
+
+    <div class="premise-grid">
+
+      <div class="premise-card">
+
+        <div class="premise-type">
+          REAL LIFE
+        </div>
+
+        <div class="premise-name">
+          당신 × 하주연
+        </div>
+
+        <div class="premise-text">
+          같은 경영학과 3학년.<br>
+          2년째 만나기만 하면 부딪히는 상극.
+        </div>
+
+      </div>
+
+
+      <div class="premise-vs">
+        VS
+      </div>
+
+
+      <div class="premise-card online">
+
+        <div class="premise-type">
+          BATTLE ATTACK
+        </div>
+
+        <div class="premise-name">
+          당신 × LUNA
+        </div>
+
+        <div class="premise-text">
+          약 1년째 함께 게임해온 절친이자
+          최고의 고정 듀오.
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="story">
+
+      <p>
+        같은 대학교 경영학과 3학년인 당신과 하주연.
+        두 사람은 1학년 때부터 사사건건 부딪혀온 사이다.
+      </p>
+
+      <p>
+        계획과 원칙을 중요하게 생각하는 과탑 하주연과,
+        자신의 방식대로 움직이는 당신.
+        서로의 능력은 인정하지만 방식만큼은 지독하게 맞지 않는다.
+      </p>
+
+
+      <div class="story-highlight">
+        3학년 1학기 개강 직후.<br>
+        새 학기 첫 전공수업에서 두 사람은
+        하필 또 같은 팀 프로젝트 조가 된다.
+      </div>
+
+
+      <p>
+        그리고 그날 밤.
+        서로 때문에 기분이 상한 채 헤어진 두 사람은
+        각자의 방에서 《배틀어택》에 접속한다.
+      </p>
+
+      <p>
+        당신이 가장 먼저 확인하는 친구는
+        약 1년 동안 함께 게임해온 고정 듀오
+        <strong>LUNA.</strong>
+      </p>
+
+      <p>
+        현실에서는 같은 팀이 된 것조차 싫어하면서,
+        게임에서는 서로가 접속했는지부터 확인한다.
+      </p>
+
+      <p>
+        심지어 낮에 서로 때문에 화가 난 일을
+        밤에는 서로에게 하소연하고 위로받을 수도 있다.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ==============================
+     CHARACTER
+============================== -->
+
+<section class="section section-dark">
+
+  <div class="container">
+
+    <div class="section-label">
+      02 · PLAYER PROFILE
+    </div>
+
+    <h2 class="section-title">
+      하주연 / LUNA
+    </h2>
+
+    <p class="section-sub">
+      같은 사람. 서로 다른 이름. 서로 다른 관계.
+    </p>
+
+
+    <div class="character-wrap">
+
+      <div class="character-photo">
+
+        <img
+          src="https://i.ibb.co/7tNqXnr4/1.png"
+          alt="하주연">
+
+        <div class="photo-id">
+          ID · LUNA
+        </div>
+
+      </div>
+
+
+      <div>
+
+        <div class="profile-top">
+
+          <h3 class="profile-name">
+            하주연
+          </h3>
+
+          <div class="profile-id">
+            BATTLE ID : LUNA
+          </div>
+
+        </div>
+
+
+        <div class="profile-table">
+
+          <div class="profile-row">
+            <b>소속</b>
+            <span>경영학과 3학년</span>
+          </div>
+
+          <div class="profile-row">
+            <b>학교</b>
+            <span>과탑 · 수석 장학생</span>
+          </div>
+
+          <div class="profile-row">
+            <b>현실</b>
+            <span>계획적 · 완벽주의 · 까다로움</span>
+          </div>
+
+          <div class="profile-row">
+            <b>게임</b>
+            <span>공격적 · 장난스러움 · 솔직함</span>
+          </div>
+
+          <div class="profile-row">
+            <b>관계</b>
+            <span>당신의 1년 된 게임 절친이자 고정 듀오</span>
+          </div>
+
+        </div>
+
+
+        <div class="tags">
+          <span class="tag">#과탑</span>
+          <span class="tag">#현실상극</span>
+          <span class="tag">#LUNA</span>
+          <span class="tag">#게임절친</span>
+          <span class="tag">#고정듀오</span>
+        </div>
+
+
+        <div class="character-note">
+          현실에서는 당신의 방식이 마음에 들지 않아 사사건건 부딪히지만,
+          게임에서는 하루 동안 있었던 일을 가장 편하게 털어놓을 만큼
+          당신을 가까운 사람으로 생각한다.
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ==============================
+     BATTLE ATTACK
+============================== -->
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-label">
+      03 · GAME
+    </div>
+
+    <h2 class="section-title">
+      BATTLE ATTACK
+    </h2>
+
+    <p class="section-sub">
+      BATTLE ROYALE FPS · SOLO / DUO / SQUAD
+    </p>
+
+
+    <div class="battle-window">
+
+      <div class="battle-header">
+
+        <div class="battle-logo">
+          BATTLE ATTACK
+        </div>
+
+        <div class="battle-live">
+          ● SERVER ONLINE
+        </div>
+
+      </div>
+
+
+      <div class="battle-content">
+
+        <div class="battle-row">
+          <span class="battle-key">PLAYER</span>
+          <span class="battle-value">당신</span>
+        </div>
+
+        <div class="battle-row">
+          <span class="battle-key">FRIEND</span>
+          <span class="battle-value">LUNA</span>
+        </div>
+
+        <div class="battle-row">
+          <span class="battle-key">MODE</span>
+          <span class="battle-value">DUO</span>
+        </div>
+
+        <div class="battle-row">
+          <span class="battle-key">RELATIONSHIP</span>
+          <span class="battle-value">BEST DUO · 1 YEAR</span>
+        </div>
+
+        <div class="battle-row">
+          <span class="battle-key">STATUS</span>
+          <span class="battle-value green">● ONLINE</span>
+        </div>
+
+
+        <div class="battle-message">
+          최대 100명의 플레이어가 하나의 전장에 투입되는
+          가상의 배틀로얄 FPS.<br><br>
+
+          당신과 LUNA는 약 1년 전 우연히 같은 스쿼드에서 만났다.
+          지금은 특별한 약속이 없어도 밤이면 서로의 접속 여부부터 확인하는
+          <strong>고정 듀오</strong>다.
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ==============================
+     COMMAND CENTER
+============================== -->
+
+<section class="section section-dark">
+
+  <div class="container">
+
+    <div class="section-label">
+      04 · COMMAND CENTER
+    </div>
+
+    <h2 class="section-title">
+      채팅창에 명령어를 입력하세요
+    </h2>
+
+    <p class="section-sub">
+      현실과 게임을 오가거나 원하는 정보를 바로 확인할 수 있습니다.
+    </p>
+
+
+    <div class="command-panel">
+
+      <div class="command-header">
+
+        <div class="command-header-title">
+          COMMAND CENTER
+        </div>
+
+        <div class="command-header-status">
+          ● SYSTEM READY
+        </div>
+
+      </div>
+
+
+      <div class="command-main">
+
+
+        <div class="command-chips">
+
+          <span class="command-chip main">🎮 !접속</span>
+          <span class="command-chip">⏻ !로그아웃</span>
+          <span class="command-chip">👥 !친구목록</span>
+          <span class="command-chip">🏆 !전적</span>
+          <span class="command-chip">💬 !메신저</span>
+
+        </div>
+
+
+        <div class="command-guide">
+
+
+          <div class="command-item">
+
+            <div class="command-key">
+              !접속
+            </div>
+
+            <div class="command-detail">
+              <strong>《배틀어택》에 접속</strong>
+              <span>
+                현실 파트에서 게임 파트로 전환합니다.
+                현재 상황에 따른 LUNA의 접속 상태를 확인하고
+                듀오 플레이를 시작할 수 있습니다.
+              </span>
+            </div>
+
+          </div>
+
+
+          <div class="command-item">
+
+            <div class="command-key">
+              !로그아웃
+            </div>
+
+            <div class="command-detail">
+              <strong>현실로 복귀</strong>
+              <span>
+                현재 게임 또는 로비 장면을 종료하고
+                시간과 상황에 맞는 현실 장면으로 돌아갑니다.
+              </span>
+            </div>
+
+          </div>
+
+
+          <div class="command-item">
+
+            <div class="command-key">
+              !친구목록
+            </div>
+
+            <div class="command-detail">
+              <strong>FRIEND LIST</strong>
+              <span>
+                LUNA의 ONLINE · IN GAME · OFFLINE 여부와
+                마지막 접속 상태를 확인합니다.
+              </span>
+            </div>
+
+          </div>
+
+
+          <div class="command-item">
+
+            <div class="command-key">
+              !전적
+            </div>
+
+            <div class="command-detail">
+              <strong>RECENT MATCHES</strong>
+              <span>
+                당신과 LUNA의 최근 순위, 처치 수, 생존 기록과
+                기억에 남는 플레이를 확인합니다.
+              </span>
+            </div>
+
+          </div>
+
+
+          <div class="command-item">
+
+            <div class="command-key">
+              !메신저
+            </div>
+
+            <div class="command-detail">
+              <strong>현실 메신저</strong>
+              <span>
+                현실의 하주연과 나눈 메시지를 확인하거나
+                팀 프로젝트·수업 등의 이유로 대화를 시작합니다.
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="connect-guide">
+
+          <div class="connect-guide-title">
+            CORE COMMAND · !접속
+          </div>
+
+
+          <div class="terminal">
+
+            <span class="terminal-title">[ BATTLE ATTACK ]</span><br>
+            ━━━━━━━━━━━━━━━━━━<br>
+            PLAYER : 당신<br>
+            FRIEND : LUNA<br>
+            ━━━━━━━━━━━━━━━━━━<br><br>
+
+            <span class="terminal-green">🟢 ONLINE</span>
+            &nbsp; LUNA가 현재 로비에 접속 중<br>
+
+            <span class="terminal-yellow">💥 IN GAME</span>
+            &nbsp; LUNA가 현재 게임 플레이 중<br>
+
+            <span class="terminal-red">🚫 OFFLINE</span>
+            &nbsp; LUNA가 현재 접속하지 않음<br><br>
+
+            [ DUO INVITE ]
+
+          </div>
+
+
+          <p class="connect-explain">
+            LUNA의 상태는 현재 시간과 스토리 상황을 반영합니다.
+            현실에서 수업 중이거나 당신과 함께 있는 등
+            접속할 수 없는 상황에서는 임의로 ONLINE 상태가 되지 않습니다.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ==============================
+     PLAY GUIDE
+============================== -->
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-label">
+      05 · PLAY GUIDE
+    </div>
+
+    <h2 class="section-title">
+      추천 플레이
+    </h2>
+
+    <p class="section-sub">
+      현실과 게임을 자유롭게 오가며 원하는 방식으로 관계를 만들어보세요.
+    </p>
+
+
+    <div class="play-grid">
+
+
+      <div class="play-item">
+
+        <div class="play-icon">🎮</div>
+
+        <div class="play-text">
+          <strong>배틀어택 접속</strong>
+          <span>
+            <b>!접속</b>으로 《배틀어택》에 접속해 루나와 듀오하기
+          </span>
+        </div>
+
+      </div>
+
+
+      <div class="play-item">
+
+        <div class="play-icon">💬</div>
+
+        <div class="play-text">
+          <strong>오늘 있었던 일 털어놓기</strong>
+          <span>
+            루나에게 오늘 현실에서 하주연과 싸운 이야기 털어놓기
+          </span>
+        </div>
+
+      </div>
+
+
+      <div class="play-item">
+
+        <div class="play-icon">🔍</div>
+
+        <div class="play-text">
+          <strong>정체 단서 찾기</strong>
+          <span>
+            말버릇·목소리·학교 일정에서 서로의 정체 단서 찾아보기
+          </span>
+        </div>
+
+      </div>
+
+
+      <div class="play-item">
+
+        <div class="play-icon">🤫</div>
+
+        <div class="play-text">
+          <strong>알아도 모르는 척</strong>
+          <span>
+            루나의 정체를 먼저 알아채고도 모르는 척 계속 듀오하기
+          </span>
+        </div>
+
+      </div>
+
+
+      <div class="play-item">
+
+        <div class="play-icon">💕</div>
+
+        <div class="play-text">
+          <strong>현실에서 먼저 다가가기</strong>
+          <span>
+            현실의 하주연에게 평소와 다르게 먼저 다가가 반응 살펴보기
+          </span>
+        </div>
+
+      </div>
+
+
+      <div class="play-item">
+
+        <div class="play-icon">🎭</div>
+
+        <div class="play-text">
+          <strong>게임 속 기억으로 떠보기</strong>
+          <span>
+            정체를 의심했다면 게임에서만 아는 이야기를 현실에서 슬쩍 꺼내보기
+          </span>
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ==============================
+     EPISODES
+============================== -->
+
+<section class="section section-dark">
+
+  <div class="container">
+
+    <div class="section-label">
+      06 · STORY EPISODES
+    </div>
+
+    <h2 class="section-title">
+      접속할수록,<br>
+      두 세계의 거리가 가까워진다
+    </h2>
+
+    <p class="section-sub">
+      에피소드는 고정된 사건이 아니라 플레이에 따라 자연스럽게 이어지는 관계의 흐름입니다.
+    </p>
+
+
+    <div class="episodes">
+
+
+      <div class="episode">
+
+        <div class="ep-number">EP.01</div>
+
+        <div>
+          <div class="ep-title">
+            또 너랑 같은 팀이라고?
+          </div>
+
+          <div class="ep-desc">
+            3학년 첫 전공수업. 팀 프로젝트 조 편성표에서
+            당신과 하주연의 이름이 또 나란히 붙는다.
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="episode">
+
+        <div class="ep-number">EP.02</div>
+
+        <div>
+          <div class="ep-title">
+            다시 시작된 상극
+          </div>
+
+          <div class="ep-desc">
+            팀플이 본격적으로 시작되면서 피하고 싶어도 계속 마주쳐야 하는 두 사람.
+            여전히 부딪히지만 서로의 예상 밖 모습도 보이기 시작한다.
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="episode featured">
+
+        <div class="ep-number">EP.03</div>
+
+        <div>
+          <div class="ep-title">
+            접속하면 네가 있다
+          </div>
+
+          <div class="ep-desc">
+            현실에서는 그렇게 안 맞는데 《배틀어택》에 접속하면
+            가장 먼저 찾게 되는 사람은 언제나 LUNA다.
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="episode">
+
+        <div class="ep-number">EP.04</div>
+
+        <div>
+          <div class="ep-title">
+            생각보다 모르는 사람
+          </div>
+
+          <div class="ep-desc">
+            싫다고만 생각했던 하주연에게 예상하지 못했던 모습이 보이기 시작한다.
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="episode">
+
+        <div class="ep-number">EP.05</div>
+
+        <div>
+          <div class="ep-title">
+            이상하게 겹치는 것들
+          </div>
+
+          <div class="ep-desc">
+            시험, 팀플, 학교 일정, 사소한 말버릇.
+            현실의 하주연과 게임 속 LUNA 사이에 묘한 공통점이 생긴다.
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="episode">
+
+        <div class="ep-number">EP.06</div>
+
+        <div>
+          <div class="ep-title">
+            왜 자꾸 네가 겹치지?
+          </div>
+
+          <div class="ep-desc">
+            우연이라고 넘겼던 단서들이 쌓이며
+            익숙한 말투와 행동이 한 사람을 떠올리게 한다.
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="episode">
+
+        <div class="ep-number">EP.07</div>
+
+        <div>
+          <div class="ep-title">
+            설마, 너야?
+          </div>
+
+          <div class="ep-desc">
+            막연했던 기시감이 구체적인 의심으로 변한다.
+            누가 먼저 알아차릴지는 플레이에 따라 달라진다.
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="episode">
+
+        <div class="ep-number">EP.08</div>
+
+        <div>
+          <div class="ep-title">
+            같은 사람이었다
+          </div>
+
+          <div class="ep-desc">
+            현실에서 싫어했던 사람과 게임에서 가장 가까웠던 사람이
+            결국 하나의 얼굴로 겹쳐진다.
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="episode">
+
+        <div class="ep-number">EP.09</div>
+
+        <div>
+          <div class="ep-title">
+            싫어했던 너, 좋아했던 너
+          </div>
+
+          <div class="ep-desc">
+            2년 동안 쌓인 현실의 감정과
+            1년 동안 쌓인 온라인의 친밀함이 서로 뒤섞이기 시작한다.
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="episode">
+
+        <div class="ep-number">EP.10</div>
+
+        <div>
+          <div class="ep-title">
+            게임 밖에서도
+          </div>
+
+          <div class="ep-desc">
+            이제 LUNA와 하주연을 완전히 따로 볼 수 없다.
+            로그아웃한 뒤에도 이어지는 관계가 시작된다.
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="episode-notice">
+      ※ 실제 전개는 당신의 선택과 대화에 따라 달라집니다.
+      정체 발견·고백·연애가 특정 에피소드에서 자동으로 발생하지 않습니다.
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ==============================
+     HIDDEN IDENTITY
+============================== -->
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-label">
+      07 · HIDDEN IDENTITY
+    </div>
+
+    <h2 class="section-title">
+      둘만 모르는 사실
+    </h2>
+
+
+    <div class="secret-box">
+
+      <div class="secret-code">
+        UNKNOWN TO BOTH PLAYERS
+      </div>
+
+      <div class="secret-title">
+        낮에 싸운 사람과<br>
+        밤에 위로해주는 사람이<br>
+        <strong>사실은 같은 사람.</strong>
+      </div>
+
+      <div class="secret-text">
+        하주연은 낮에 당신 때문에 짜증 났던 일을
+        밤에 LUNA로 접속해 자신의 게임 절친에게 이야기할 수 있습니다.<br><br>
+
+        당신 역시 현실의 하주연 때문에 있었던 일을
+        LUNA에게 털어놓을 수 있습니다.<br><br>
+
+        두 사람 모두 자신이 바로 그 사건의 당사자에게
+        직접 이야기하고 있다는 사실을 모릅니다.
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ==============================
+     PLAY NOW
+============================== -->
+
+<section class="section platform">
+
+  <div class="container">
+
+    <div class="platform-head">
+
+      <div class="section-label">
+        08 · PLAY NOW
+      </div>
+
+      <h2 class="section-title">
+        어디에서 접속할까요?
+      </h2>
+
+    </div>
+
+
+    <p class="platform-intro">
+      원하는 플랫폼에서 이야기를 시작하세요.
+    </p>
+
+
+    <div class="platform-buttons">
+
+
+      <a
+        class="platform-btn univers"
+        href="https://www.univers.chat/character/fb512b9d-8088-4f0c-a290-7222f9cc754b"
+        target="_blank"
+        rel="noopener">
+
+        <div class="platform-left">
+          <span>✦</span>
+
+          <div>
+            유니챗에서 즐기기
+            <small>UNIVERS CHAT</small>
+          </div>
+        </div>
+
+        <div class="platform-arrow">
+          →
+        </div>
+
+      </a>
+
+
+      <a
+        class="platform-btn crack"
+        href="https://share.crack.wrtn.ai/8b42fl"
+        target="_blank"
+        rel="noopener">
+
+        <div class="platform-left">
+          <span>♥</span>
+
+          <div>
+            크랙에서 즐기기
+            <small>CRACK</small>
+          </div>
+        </div>
+
+        <div class="platform-arrow">
+          →
+        </div>
+
+      </a>
+
+
+      <a
+        class="platform-btn tikita"
+        href="https://tikita.ai/ko/story/N5L498B0?referrer=Z7272W"
+        target="_blank"
+        rel="noopener">
+
+        <div class="platform-left">
+          <span>◆</span>
+
+          <div>
+            티키타에서 즐기기
+            <small>TIKITA</small>
+          </div>
+        </div>
+
+        <div class="platform-arrow">
+          →
+        </div>
+
+      </a>
+
+
+    </div>
+
+
+    <div class="final-message">
+
+      <div class="final-status">
+        ● LUNA IS ONLINE
+      </div>
+
+      <h2 class="final-title">
+        현실에서는 피하고 싶은데,<br>
+        밤이 되면 <span>접속을 기다린다.</span>
+      </h2>
+
+      <div class="final-copy">
+        현실에서 2년째 상극.<br>
+        《배틀어택》에서 1년째 절친.<br><br>
+
+        서로의 정체를 모르는 두 사람의<br>
+        이중생활 캠퍼스 로맨틱 코미디.
+      </div>
+
+      <div class="final-command">
+        &gt; !접속
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ==============================
+     COPYRIGHT
+============================== -->
+
+<footer class="copyright">
+
+  <div class="copyright-title">
+    COPYRIGHT NOTICE
+  </div>
+
+  <div class="copyright-main">
+    © 2026 아몬드송송 · ALL RIGHTS RESERVED
+  </div>
+
+  <div class="copyright-text">
+    본 작품의 세계관·캐릭터 설정·스토리·창작 요소 및
+    HTML 구조·레이아웃·디자인의 무단 복제, 도용,
+    변형 및 재배포를 금합니다.
+  </div>
+
+  <div class="copyright-author">
+    Original Story &amp; Creative Design by
+    <strong>아몬드송송</strong>
+  </div>
+
+</footer>
+
+
+</body>
+</html>
