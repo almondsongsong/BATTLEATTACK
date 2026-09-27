@@ -256,13 +256,11 @@ img{
 }
 
 
-/* HERO STATUS */
+/* HERO CONNECTION STATUS */
 
 .hero-status{
   display:flex;
   align-items:center;
-  justify-content:space-between;
-  gap:20px;
 
   width:min(620px,100%);
   margin-top:39px;
@@ -307,23 +305,6 @@ img{
   color:#9aabb0;
   font-size:11px;
   line-height:1.55;
-}
-
-.hero-status-command{
-  flex:0 0 auto;
-
-  padding:7px 11px;
-
-  background:#10232a;
-  border:1px solid #315662;
-
-  color:#70d8e9;
-
-  font-family:Consolas,"Courier New",monospace;
-  font-size:10px;
-  font-weight:900;
-
-  white-space:nowrap;
 }
 
 
@@ -425,17 +406,17 @@ img{
 
 .character-wrap{
   display:grid;
-  grid-template-columns:260px minmax(0,1fr);
+  grid-template-columns:minmax(260px,.82fr) minmax(0,1.18fr);
   gap:38px;
 
-  align-items:start;
+  align-items:stretch;
   margin-top:36px;
 }
 
 .character-photo{
   position:relative;
-  width:260px;
-  max-width:100%;
+  width:100%;
+  min-height:100%;
 
   overflow:hidden;
   background:#10171c;
@@ -443,14 +424,21 @@ img{
 }
 
 .character-photo img{
+  position:absolute;
+  inset:0;
+
   width:100%;
-  aspect-ratio:3/4;
+  height:100%;
+
+  max-width:none;
   object-fit:cover;
-  object-position:center top;
+  object-position:center center;
 }
 
 .photo-id{
   position:absolute;
+  z-index:2;
+
   left:8px;
   right:8px;
   bottom:8px;
@@ -465,6 +453,10 @@ img{
   font-size:8px;
   font-weight:900;
   letter-spacing:2px;
+}
+
+.profile-content{
+  min-width:0;
 }
 
 .profile-top{
@@ -585,7 +577,6 @@ img{
 .battle-row{
   display:grid;
   grid-template-columns:145px minmax(0,1fr);
-
   gap:18px;
   align-items:center;
 
@@ -705,12 +696,6 @@ img{
   white-space:nowrap;
 }
 
-.command-chip.main{
-  background:#10242b;
-  border-color:#4e8b9a;
-  color:#76dced;
-}
-
 .command-guide{
   display:grid;
   gap:8px;
@@ -820,7 +805,6 @@ img{
 .play-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-
   gap:9px;
   margin-top:34px;
 }
@@ -1203,7 +1187,6 @@ img{
   }
 
   .hero-status{
-    gap:12px;
     margin-top:32px;
     padding:13px 14px;
   }
@@ -1215,11 +1198,6 @@ img{
 
   .hero-status-text{
     font-size:10px;
-  }
-
-  .hero-status-command{
-    padding:6px 9px;
-    font-size:9px;
   }
 
   .section-title{
@@ -1243,12 +1221,25 @@ img{
   /* CHARACTER */
 
   .character-wrap{
-    grid-template-columns:150px minmax(0,1fr);
+    grid-template-columns:minmax(160px,.85fr) minmax(0,1.15fr);
     gap:18px;
+    align-items:stretch;
   }
 
   .character-photo{
-    width:150px;
+    width:100%;
+    min-height:100%;
+  }
+
+  .character-photo img{
+    position:absolute;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+    object-position:center center;
   }
 
   .profile-name{
@@ -1390,7 +1381,17 @@ img{
   }
 
   .character-photo{
-    width:min(230px,72vw);
+    width:100%;
+    min-height:0;
+    aspect-ratio:3/4;
+  }
+
+  .character-photo img{
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center top;
   }
 
   .profile-name{
@@ -1406,10 +1407,6 @@ img{
   .profile-row b,
   .profile-row span{
     display:block;
-  }
-
-  .hero-status{
-    align-items:flex-start;
   }
 
 }
@@ -1458,7 +1455,6 @@ img{
 
 </style>
 </head>
-
 
 <body>
 
@@ -1518,15 +1514,11 @@ img{
           </div>
 
           <div class="hero-status-text">
-            오늘 밤도 LUNA가 당신의 접속을 기다립니다.
+            오늘 밤도 LUNA가 당신을 기다립니다.
           </div>
 
         </div>
 
-      </div>
-
-      <div class="hero-status-command">
-        !접속
       </div>
 
     </div>
@@ -1685,7 +1677,7 @@ img{
       </div>
 
 
-      <div>
+      <div class="profile-content">
 
         <div class="profile-top">
 
@@ -1875,7 +1867,7 @@ img{
       <div class="command-main">
 
         <div class="command-chips">
-          <span class="command-chip main">🎮 !접속</span>
+          <span class="command-chip">🎮 !접속</span>
           <span class="command-chip">⏻ !로그아웃</span>
           <span class="command-chip">👥 !친구목록</span>
           <span class="command-chip">🏆 !전적</span>
@@ -2415,7 +2407,6 @@ img{
   </div>
 
 </footer>
-
 
 </body>
 </html>
